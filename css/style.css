@@ -1,187 +1,293 @@
-/*
-COLORS:
-
-Light green: #7ed56f
-Medium green: #55c57a
-Dark green: #28b485
-
+/* 
+ This file will have the all VARIABLES used in the project
+ - Author : Pavel Ray   
 */
+/* 
+ This file will have the all Functions
+ - Author : Pavel Ray   
+*/
+/* 
+ This file will have the all Mixins
+ - Author : Pavel Ray   
+*/
+/* 
+ This file will have the all the code related to Base HTML
+ - Author : Pavel Ray   
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
 
-*{
-    margin:0;
-    padding: 0;
-    box-sizing: inherit;
-}
+html {
+  font-size: 62.5%; }
 
-html{
-    font-size:62.5%;
-}
+body {
+  box-sizing: border-box; }
 
-body{
-    font-family: 'Nunito', sans-serif;
-    font-weight: 400;
-    /*font-size: 16px;*/
-    line-height: 1.7;
-    color: #777;
-    padding: 3rem;
-    box-sizing: border-box;
-}
+/* 
+ This file will have the all Animations
+ - Author : Pavel Ray   
+*/
+@keyframes moveLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem); }
+  80% {
+    transform: translateX(1rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
 
-.header{
-    height: 95vh;
-    background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), hsla(160, 64%, 43%, 0.8)), url('../img/hero.jpg');
-    background-size: cover;
-    background-position: top;
-    position: relative;
-    clip-path: polygon(0 0, 100% 0%, 100% 75%, 0% 100%);
-}
+@keyframes moveRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem); }
+  80% {
+    transform: translateX(-1rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
 
-.header__logo-box{
-    position: absolute;
-    top:4rem;
-    left:4rem;
-}
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
 
-.header__logo{
-    height:3.5rem;
-}
+/* 
+ This file will have the all the code related to TYPOGRAPHY
+ - Author : Pavel Ray   
+*/
+body {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+  /*font-size: 16px;*/
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem; }
 
-.header__text-box{
-    position: absolute;
-    top:50%;
-    left:50%;
-    transform: translate(-50%,-50%);
-    text-align: center;
-}
-
-.heading-primary{
-    color: #fff;
-    text-transform: uppercase;
-    backface-visibility: hidden;
-    margin-bottom: 6rem;
-}
-
-.heading-primary--main{
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  margin-bottom: 6rem; }
+  .heading-primary--main {
     display: block;
     font-size: 6rem;
     font-weight: 400;
     letter-spacing: 3.5rem;
-
     animation-name: moveLeft;
     animation-duration: 1s;
-    animation-timing-function: ease-out;
-}
-
-.heading-primary--sub{
+    animation-timing-function: ease-out; }
+  .heading-primary--sub {
     display: block;
     font-size: 2rem;
     font-weight: 400;
     letter-spacing: 1.75rem;
-
     animation-name: moveRight;
     animation-duration: 1s;
-    animation-timing-function: ease-out;
-}
+    animation-timing-function: ease-out; }
 
-.btn:link,
-.btn:visited{
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 1.5rem 4rem;
-    display: inline-block;
-    border-radius: 10rem;
-    transition: all .2s;
-    position: relative;
-    font-size: 1.6rem;
-    backface-visibility: hidden;
-    
-}
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  display: inline-block;
+  background-clip: text;
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: .1rem;
+  transition: all .2s; }
+  .heading-secondary:hover {
+    transform: skewY(-2deg) skewX(15deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.5); }
 
-.btn--animated{
-    animation: moveInBottom .5s ease-out .75s;
-    animation-fill-mode: backwards;
- }
+.heading-teriary {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  font-weight: 700; }
 
-.btn:hover{
-    transform: translateY(-.3rem);
-    box-shadow: 0 1rem 2rem rgba(0,0,0,.2);
-}
+.paragraph {
+  font-size: 1.6rem; }
+  .paragraph:not(:last-child) {
+    margin-bottom: 3rem; }
 
-.btn:active{
-    transform: translateY(-.1rem);
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.5);
-}
+/* 
+ This file will have the all Utility
+ - Author : Pavel Ray   
+*/
+.u-text-center {
+  text-align: center; }
 
-.btn--white{
-    background-color: #fff;
-    color: #777;
-}
+.u-margin-bottom-small {
+  margin-bottom: 1.5rem; }
 
-.btn::after{
-    content: '';
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    border-radius: 10rem;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    transition: all .4s;
-}
+.u-margin-bottom-medium {
+  margin-bottom: 4rem; }
 
-.btn--white::after{
-    background-color: #fff;
-}
+.u-margin-bottom-big {
+  margin-bottom: 8rem; }
 
-.btn:hover::after{
+/* 
+ Button Component Related Class
+ - Author : Pavel Ray   
+*/
+.btn:link, .btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  border-radius: 10rem;
+  transition: all .2s;
+  position: relative;
+  font-size: 1.6rem;
+  backface-visibility: hidden; }
+
+.btn--animated {
+  animation: moveInBottom .5s ease-out .75s;
+  animation-fill-mode: backwards; }
+
+.btn:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+  .btn:hover::after {
     transform: scaleX(1.4) scaleY(1.6);
-    opacity: 0;
-}
+    opacity: 0; }
 
+.btn:active {
+  transform: translateY(-0.1rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5); }
 
-/** Animations **/
+.btn--white {
+  background-color: #fff;
+  color: #777; }
+  .btn--white::after {
+    background-color: #fff; }
 
-@keyframes moveLeft{
-    0%{
-        opacity: 0;
-        transform: translateX(-10rem);
-    }
+.btn::after {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 10rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all .4s; }
 
-    80%{
-        transform: translateX(1rem);
-    }
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0; }
 
-    100%{
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
+.btn-text:link, .btn-text:visited {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+  color: #55c57a;
+  border-bottom: 1px solid #55c57a;
+  padding: 3px;
+  transition: all .2s; }
 
-@keyframes moveRight{
-    0%{
-        opacity: 0;
-        transform: translateX(10rem);
-    }
+.btn-text:hover {
+  background-color: #55c57a;
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15); }
 
-    80%{
-        transform: translateX(-1rem);
-    }
+.btn-text:active {
+  transform: translateY(0);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); }
 
-    100%{
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
+.composition {
+  position: relative; }
+  .composition__photo {
+    width: 55%;
+    border-radius: 2px;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.6);
+    position: absolute;
+    transition: all .2s;
+    z-index: 10;
+    outline-offset: 2rem;
+    backface-visibility: hidden; }
+    .composition__photo--p1 {
+      top: -3rem;
+      left: 0; }
+    .composition__photo--p2 {
+      top: 3rem;
+      right: 0; }
+    .composition__photo--p3 {
+      top: 10rem;
+      left: 20%; }
+    .composition__photo:hover {
+      outline: 1.5rem solid #55c57a;
+      transform: scale(1.05) translateY(-0.5rem);
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.8);
+      z-index: 20; }
+  .composition:hover .composition__photo:not(:hover) {
+    transform: scale(0.95); }
 
-@keyframes moveInBottom{
-    0%{
-        opacity: 0;
-        transform: translateY(3rem);
-    }
-   
-    100%{
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+.row {
+  max-width: 116rem;
+  margin: 0 auto; }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+  .row::after {
+    content: "";
+    clear: both;
+    display: table; }
+  .row [class^="col-"] {
+    float: left; }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 6rem; }
+  .row .col-1-of-2 {
+    width: calc((100% - 6rem) /2); }
+  .row .col-1-of-3 {
+    width: calc((100% - 2 * 6rem) /3); }
+  .row .col-2-of-3 {
+    width: calc( 2 * ((100% - 2 * 6rem) /3) + 6rem); }
+  .row .col-1-of-4 {
+    width: calc((100% - 3 * 6rem) /4); }
+  .row .col-2-of-4 {
+    width: calc( 2 * ((100% - 3 * 6rem) /4) + 6rem); }
+  .row .col-3-of-4 {
+    width: calc(3 * ((100% - 3 * 6rem) /4) + ( 2 * 6rem)); }
+
+/* 
+ Header Layout Reated Class
+ - Author : Pavel Ray   
+*/
+.header {
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero.jpg");
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  clip-path: polygon(0 0, 100% 0%, 100% 75%, 0% 100%); }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem; }
+  .header__text-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; }
+
+/* 
+ This file will have code related to Home Page
+ - Author : Pavel Ray   
+*/
+.section-about {
+  background-color: #f7f7f7;
+  padding: 25rem 0;
+  margin-top: -20vh; }
